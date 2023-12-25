@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <style>
+      input[type="number"] {
+        font-size: 200%;
+        width: 80px;
+      }
+
+      input[type="text"] {
+        font-size: 200%;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      const setupSelectionChange = function(start_element, end_element, text_element) {
+        let start_input = document.querySelector(start_element);
+        let end_input = document.querySelector(end_element);
+        let text_input = document.querySelector(text_element);
+
+        let changeCallback = (event) => {
+          text_input.focus();
+          text_input.setSelectionRange(start_input.value, end_input.value);
+        };
+
+        start_input.addEventListener("change", changeCallback);
+        end_input.addEventListener("change", changeCallback);
+      }
+
+      onload = (event) => {
+        setupSelectionChange("#selection_start_ltr", "#selection_end_ltr", "#main_text_ltr");
+        setupSelectionChange("#selection_start_rtl", "#selection_end_rtl", "#main_text_rtl");
+        setupSelectionChange("#selection_start_bidi", "#selection_end_bidi", "#main_text_bidi");
+        setupSelectionChange("#selection_start_ltr_rtl", "#selection_end_ltr_rtl", "#main_text_ltr_rtl");
+        setupSelectionChange("#selection_start_rtl_rtl", "#selection_end_rtl_rtl", "#main_text_rtl_rtl");
+        setupSelectionChange("#selection_start_bidi_rtl", "#selection_end_bidi_rtl", "#main_text_bidi_rtl");
+      };
+
+    </script>
+  </head>
+  <body>
+    <p>
+    パラグラフLTRでのLTR文字列の文字選択：<br />
+    <input type="number" min="0" value="0" id="selection_start_ltr"/>文字目〜<input type="number" min="0" value="0" id="selection_end_ltr"/>文字目を選択 <br />
+    <input type="text" id="main_text_ltr" dir="ltr" value="&#x3042;&#x3044;&#x3046;&#x3048;&#x304A;&#x304B;&#x304D;&#x304F;&#x3051;"/>
+    </p>
+
+    <p>
+    パラグラフLTRでのRTL文字列の文字選択：<br />
+    <input type="number" min="0" value="0" id="selection_start_rtl"/>文字目〜<input type="number" min="0" value="0" id="selection_end_rtl"/>文字目を選択 <br />
+    <input type="text" id="main_text_rtl" dir="ltr" value="&#x5D0;&#x5D1;&#x5D2;&#x5D3;&#x5D4;&#x5D5;&#x5D6;&#x5D7;&#x5D8;" />
+    </p>
+
+    <p>
+    パラグラフLTRでのBiDi文字列の文字選択：<br />
+    <input type="number" min="0" value="0" id="selection_start_bidi"/>文字目〜<input type="number" min="0" value="0" id="selection_end_bidi"/>文字目を選択 <br />
+    <input type="text" id="main_text_bidi" dri="ltr" value="&#x3042;&#x3044;&#x202B;&#x5D0;&#x5D1;&#x3046;&#x3048;&#x5D2;&#x5D3;&#x202C;&#x304A;&#x304B;" />
+    </p>
+
+
+    <p>
+    パラグラフRTLでのLTR文字列の文字選択：<br />
+    <input type="number" min="0" value="0" id="selection_start_ltr_rtl"/>文字目〜<input type="number" min="0" value="0" id="selection_end_ltr_rtl"/>文字目を選択 <br />
+    <input type="text" id="main_text_ltr_rtl" dir="rtl" value="&#x3042;&#x3044;&#x3046;&#x3048;&#x304A;&#x304B;&#x304D;&#x304F;&#x3051;"/>
+    </p>
+
+    <p>
+    パラグラフRTLでのRTL文字列の文字選択：<br />
+    <input type="number" min="0" value="0" id="selection_start_rtl_rtl"/>文字目〜<input type="number" min="0" value="0" id="selection_end_rtl_rtl"/>文字目を選択 <br />
+    <input type="text" id="main_text_rtl_rtl" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;&#x5D3;&#x5D4;&#x5D5;&#x5D6;&#x5D7;&#x5D8;" />
+    </p>
+
+    <p>
+    パラグラフRTLでのBiDi文字列の文字選択：<br />
+    <input type="number" min="0" value="0" id="selection_start_bidi_rtl"/>文字目〜<input type="number" min="0" value="0" id="selection_end_bidi_rtl"/>文字目を選択 <br />
+    <input type="text" id="main_text_bidi_rtl" dir="rtl" value="&#x3042;&#x3044;&#x202B;&#x5D0;&#x5D1;&#x3046;&#x3048;&#x5D2;&#x5D3;&#x202C;&#x304A;&#x304B;" />
+    </p>
+  </body>
+</html>
