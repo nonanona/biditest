@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style>
+      input[type="text"] { font-size: 200%; }
+    </style>
+  </head>
+  <body>
+    <p>
+      LTRのテキストのみ (パラグラフはLTR)  <br />
+      <input dir="ltr" type="text" value="Hello, World."/>
+    </p>
+
+    <p>
+      RTLのテキストのみ (パラグラフはLTR)  <br />
+      <input dir="ltr" type="text" value="&#1513;&#1500;&#1493;&#1501;&#32;&#1506;&#1493;&#1500;&#1501;&#46;"/>
+    </p>
+
+    <p>
+      BiDiのテキストのみ (パラグラフはLTR)  <br />
+      <input dir="ltr" type="text" id="rtl_text" value="&#97;&#98;&#8235;&#1488;&#1489;&#99;&#100;&#1490;&#1491;&#8236;&#101;&#102;"/>
+    </p>
+
+    <p>
+      LTRのテキストのみ (パラグラフはRTL)  <br />
+      <input dir="rtl" type="text" value="Hello, World."/>
+    </p>
+
+    <p>
+      RTLのテキストのみ (パラグラフはRTL)  <br />
+      <input dir="rtl" type="text" value="&#1513;&#1500;&#1493;&#1501;&#32;&#1506;&#1493;&#1500;&#1501;&#46;"/>
+    </p>
+
+    <p>
+      BiDiのテキストのみ (パラグラフはRTL)  <br />
+      <input dir="rtl" type="text" id="rtl_text" value="&#97;&#98;&#8235;&#1488;&#1489;&#99;&#100;&#1490;&#1491;&#8236;&#101;&#102;"/>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      input[type="phone"] { font-size: 200%; }
+    </style>
+    <script>
+      onload = (event) => {
+        document.querySelector("#phone").addEventListener("keyup", (event) => {
+          document.querySelector("#phone_ltr").value = event.target.value;
+          document.querySelector("#phone_rtl").value = event.target.value;
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      電話番号を(123) 456-7890のフォーマットで入力してみましょう。<br />
+      <input dir="ltr" type="phone" id="phone" value="" autofocus/>
+    </p>
+
+    <p>
+      LTRコンテキストでの表示<br />
+      <input dir="ltr" type="phone" id="phone_ltr" disabled />
+    </p>
+
+    <p>
+      RTLコンテキストでの表示<br />
+      <input dir="rtl" type="phone" id="phone_rtl" disabled />
+    </p>
+
+  </body>
+</html>
